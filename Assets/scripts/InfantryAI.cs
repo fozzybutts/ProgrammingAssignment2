@@ -9,7 +9,6 @@ public class InfantryAI : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float fireCooldown = 1.5f;
-    public bool canShootRight = true; // If false, only shoots left
 
     private Transform player;
     private float nextFireTime = 0f;
@@ -25,6 +24,7 @@ public class InfantryAI : MonoBehaviour
     {
         if (PlayerInSight())
         {
+            FacePlayer();
             TryShoot();
         }
         else
@@ -47,22 +47,28 @@ public class InfantryAI : MonoBehaviour
     bool PlayerInSight()
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        if (distanceToPlayer > detectionRange) return false;
+        return distanceToPlayer <= detectionRange;
+    }
 
-        // Check direction based on "canshootright"
-        if (canShootRight && player.position.x > transform.position.x)
-            return true;
-        if (!canShootRight && player.position.x < transform.position.x)
-            return true;
-
-        return false;
+    void FacePlayer()
+    {
+        bool faceRight = player.position.x > transform.position.x;
+        FlipSprite(faceRight);
     }
 
     void TryShoot()
     {
         if (Time.time >= nextFireTime)
         {
-            Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            GameObject bullet = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+
+            // Tell the bullet to go in the correct direction
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            if (bulletScript != null)
+            {
+                bulletScript.moveRight = player.position.x > transform.position.x;
+            }
+
             nextFireTime = Time.time + fireCooldown;
         }
     }
