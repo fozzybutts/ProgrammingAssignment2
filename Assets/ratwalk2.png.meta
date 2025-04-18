@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ratwalk2_0: -6942235136783809276
+      ratwalk2_1: 8195672419681074376
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

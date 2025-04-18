@@ -190,7 +190,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageMarker: 0
-  PlayerPrefab: {fileID: 1226497440554599955}
 --- !u!1 &3891095251961095218
 GameObject:
   m_ObjectHideFlags: 0
