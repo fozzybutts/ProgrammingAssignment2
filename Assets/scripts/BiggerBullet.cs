@@ -10,13 +10,11 @@ public class BiggerBullet : MonoBehaviour
 
     void Start()
     {
-        // Get the bullet's Collider2D at the start
         bulletCollider = GetComponent<Collider2D>();
     }
 
     void Update()
     {
-        // Move the bullet
         transform.Translate((moveRight ? Vector2.right : Vector2.left) * speed * Time.deltaTime);
     }
 
