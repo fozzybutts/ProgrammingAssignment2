@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1655119877257463815}
   - component: {fileID: 6698765208076507374}
   - component: {fileID: 4781924170108680270}
-  - component: {fileID: -6263969944472139677}
+  - component: {fileID: -4622181035079952456}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: BIG Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.7454839, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.7206769, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694259325115832466}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -153,7 +153,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-6263969944472139677
+--- !u!114 &-4622181035079952456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1694259325115832466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96eb58aee5132f2429d3a32dd505db1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f0a5640a28ed8644be48e76a8a7291d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
   moveRight: 0

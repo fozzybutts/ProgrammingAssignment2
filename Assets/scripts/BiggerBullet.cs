@@ -1,6 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BiggerBullet : MonoBehaviour
 {
     // Written by AJ.
     public float speed = 10f;
@@ -26,10 +26,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             DamageCounter counter = collision.gameObject.GetComponent<DamageCounter>();
-            Debug.Log("Hit!");
+            Debug.Log("BIG Hit!");
             if (counter != null)
             {
-                counter.DamageNumbers();
+                counter.BigDamage();
             }
 
             Destroy(gameObject);
