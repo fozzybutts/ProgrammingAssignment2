@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4818505887875799383}
   - component: {fileID: -2896471277982157821}
   - component: {fileID: 7507748286318246774}
+  - component: {fileID: -948901424837653594}
   m_Layer: 0
   m_Name: Kamikaze
   m_TagString: Untagged
@@ -143,6 +144,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &-948901424837653594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261095052549713378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0caf90031a48c194dbcbed5e90e115a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 1
 --- !u!1 &1239594204980750052
 GameObject:
   m_ObjectHideFlags: 0

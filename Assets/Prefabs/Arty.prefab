@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8301970117443462949}
   - component: {fileID: 2440215547880628493}
   - component: {fileID: -1508538342217748346}
+  - component: {fileID: -5238193910251268228}
   m_Layer: 0
   m_Name: Arty
   m_TagString: Untagged
@@ -180,3 +181,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-5238193910251268228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228358855653692662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0caf90031a48c194dbcbed5e90e115a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 3
