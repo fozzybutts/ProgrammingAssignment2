@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+//Written By Liam & Aaron
 public class BossAI : MonoBehaviour
 {
     public Transform pointA;
@@ -11,6 +13,10 @@ public class BossAI : MonoBehaviour
     public GameObject barrageprojectilePrefab;
     public Transform firePointattack1;
     public Transform firePointbarrage;
+    public Transform firePointbarrage2;
+    public Transform firePointbarrage3;
+    public Transform firePointbarrage4;
+    public Transform firePointbarrage5;
     public float fireCooldown = 0.5f;
     public float fireCooldownBarrage = 5f;
 
@@ -24,6 +30,13 @@ public class BossAI : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         nextPatrolTarget = pointB.position;
+
+
+
+       
+
+
+
     }
 
     void Update()
@@ -32,11 +45,15 @@ public class BossAI : MonoBehaviour
         {
 
             MainAttack();
-            BarrageAttack();
+           
             Patrol();
 
+            MainAttack2();
         }
     }
+
+
+
 
     void Patrol()
     {
@@ -75,34 +92,42 @@ public class BossAI : MonoBehaviour
     }
 
 
-    void BarrageAttack()
+
+    void MainAttack2()
     {
-        if (Time.time >= nextFireTimeB)
+        if (Time.time >= nextFireTime)
         {
             GameObject bullet = Instantiate(projectilePrefab, firePointbarrage.position, Quaternion.identity);
-            GameObject bullet2 = Instantiate(projectilePrefab, firePointbarrage.position, Quaternion.identity);
-            GameObject bullet3 = Instantiate(projectilePrefab, firePointbarrage.position, Quaternion.identity);
-            GameObject bullet4 = Instantiate(projectilePrefab, firePointbarrage.position, Quaternion.identity);
-            GameObject bullet5 = Instantiate(projectilePrefab, firePointbarrage.position, Quaternion.identity);
-            GameObject bullet6 = Instantiate(projectilePrefab, firePointbarrage.position, Quaternion.identity);
-
+            GameObject bullet2 = Instantiate(projectilePrefab, firePointbarrage2.position, Quaternion.identity);
+            GameObject bullet3 = Instantiate(projectilePrefab, firePointbarrage3.position, Quaternion.identity);
+            GameObject bullet4 = Instantiate(projectilePrefab, firePointbarrage4.position, Quaternion.identity);
 
             // Tell the bullet to go in the correct direction
             Bullet bulletScript = bullet.GetComponent<Bullet>();
-
-
-
-
-
-
             if (bulletScript != null)
             {
                 bulletScript.moveRight = player.position.x > transform.position.x;
             }
 
-            nextFireTimeB = Time.time + fireCooldownBarrage;
+            nextFireTime = Time.time + fireCooldown;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+    void Phase2()
+    {
+       
+    }
+
 
 
 
@@ -116,18 +141,21 @@ public class BossAI : MonoBehaviour
 
 
     void OnCollisionEnter2D(Collision2D collision)
-    {
-        // If the bullet collides with the Player, then it does the thing.
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            DamageCounter counter = collision.gameObject.GetComponent<DamageCounter>();
-            Debug.Log("Hit!");
-            if (counter != null)
             {
-                counter.DamageNumbers();
+                // If the bullet collides with the Player, then it does the thing.
+                if (collision.gameObject.CompareTag("Player"))
+                {
+                    DamageCounter counter = collision.gameObject.GetComponent<DamageCounter>();
+                    Debug.Log("Hit!");
+                    if (counter != null)
+                    {
+                        counter.DamageNumbers();
+                    }
+
+                }
+
             }
-
         }
+    
 
-    }
-}
+
