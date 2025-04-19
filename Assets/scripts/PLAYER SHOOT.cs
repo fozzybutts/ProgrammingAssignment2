@@ -8,13 +8,22 @@ public class PLAYERSHOOT : MonoBehaviour
     public GameObject Bullet;
 
     
+
+    
+
+    
     // Update is called once per frame
     void Update()
     {
         
+
         if (Input.GetMouseButtonDown(0)) 
         {
+
+
             Instantiate(Bullet, transform.position, transform.rotation);
+
+
         }
 
 
