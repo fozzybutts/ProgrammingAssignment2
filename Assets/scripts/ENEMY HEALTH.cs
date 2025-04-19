@@ -7,13 +7,7 @@ public class ENEMYHEALTH : MonoBehaviour
     // WRITTEN BY EVAN GENTILE (200602183)
 
     public float Health;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject Bullet1;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -21,7 +15,7 @@ public class ENEMYHEALTH : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet") == true)
         {
 
-            Health -= 1;
+            Health =- 1;
 
 
         }
@@ -36,7 +30,7 @@ public class ENEMYHEALTH : MonoBehaviour
         
         if (Health == 0)
         {
-            Destroy(gameObject);
+            
         }
 
 
