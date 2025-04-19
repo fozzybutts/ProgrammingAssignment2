@@ -1,23 +1,20 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BossBullet : MonoBehaviour
 {
     // Written by AJ.
-    public float speed = 10f;
+    public float speed = 5f;
     public bool moveRight = true;
-    
 
     private Collider2D bulletCollider;
 
     void Start()
     {
-        // Get the bullet's Collider2D at the start
         bulletCollider = GetComponent<Collider2D>();
     }
 
     void Update()
     {
-        // Move the bullet
         transform.Translate((moveRight ? Vector2.right : Vector2.left) * speed * Time.deltaTime);
     }
 
@@ -27,10 +24,10 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             DamageCounter counter = collision.gameObject.GetComponent<DamageCounter>();
-            Debug.Log("Hit!");
+            Debug.Log("BIG Hit!");
             if (counter != null)
             {
-                counter.DamageNumbers();
+                counter.BigDamage();
             }
 
             Destroy(gameObject);
