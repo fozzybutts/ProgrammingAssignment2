@@ -12,4 +12,14 @@ public class BULLETMOVE : MonoBehaviour
     {
         transform.Translate(Vector2.up * Time.deltaTime * Speed);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+
+
+
+    }
+
+
 }
